@@ -15,9 +15,10 @@ def Extend(Path):
 if __name__ == "__main__":
     pss = []
     for i in listdir(getcwd()):
-        if not (".py" in i or ".exe" in i or ".txt"):
+        if not (".py" in i or ".exe" in i or ".txt" in i):
             p = Process(None, Extend, args=[f"{getcwd()}\\{i}"])
             pss.append(p)
             p.start()
 
     [proc.join() for proc in pss]
+
